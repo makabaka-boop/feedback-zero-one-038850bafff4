@@ -1,0 +1,50 @@
+{
+  "jobs": {
+    "jobBase": {
+      "labels": {"a1": "positive", "b2": "neutral", "c3": "negative"}
+    },
+    "jobFlaky": {
+      "labels": {"x1": "ok", "x2": "retry-ok"},
+      "faults": {"post_drop": 1, "post_503": 1}
+    },
+    "jobBadJson": {
+      "labels": {"z1": "never-read"},
+      "faults": {"bad_body": "bad_json"}
+    },
+    "jobBadJob": {
+      "labels": {"z2": "never-read"},
+      "faults": {"bad_body": "bad_job"}
+    },
+    "jobBadIds": {
+      "labels": {"z3": "never-read"},
+      "faults": {"bad_body": "bad_ids"}
+    },
+    "jobBadLabel": {
+      "labels": {"z4": "never-read"},
+      "faults": {"bad_body": "bad_label_type"}
+    },
+    "jobNull": {
+      "labels": {"n1": null, "n2": "real-label", "n3": null}
+    },
+    "jobEmpty": {
+      "labels": {}
+    },
+    "jobRemoteFail": {
+      "labels": {"f1": "never-read"},
+      "initial_status": "pending"
+    },
+    "jobPersist": {
+      "labels": {"p1": "persisted-label"},
+      "initial_status": "pending"
+    },
+    "jobTakeover": {
+      "labels": {"t1": "taken-over-ok", "t2": "taken-over-ok2"}
+    },
+    "jobCrashTicket": {
+      "labels": {"g1": "recovered-label-1", "g2": "recovered-label-2"}
+    },
+    "jobCrashCommit": {
+      "labels": {"h1": "committed-label-1", "h2": "committed-label-2"}
+    }
+  }
+}
